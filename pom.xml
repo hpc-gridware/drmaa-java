@@ -31,7 +31,7 @@
    <url>http://maven.apache.org</url>
    <properties>
       <maven.compiler.source>1.8</maven.compiler.source>
-      <maven.compiler.target>2.8</maven.compiler.target>
+      <maven.compiler.target>1.8</maven.compiler.target>
       <!-- the module tests require a running Cluster Scheduler
            and settings being passed as system properties - we call them from testsuite
        -->
