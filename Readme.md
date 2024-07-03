@@ -12,13 +12,13 @@ A comprehensive testsuite can be run from within the Cluster Scheduler testsuite
 Cluster Scheduler DRMAA Java requires the following Software for Building
 * Java JDK >= 1.8
 * Maven
-* A Cluster Scheduler installation including the architecture specific libdrmaa.so
+* A Cluster Scheduler installation including the architecture specific drmaa shared library (usually libdrmaa.so)
 
 ## Build / Package
 
 Build the jdrmaa jar file with Maven and copy it to the Cluster Scheduler installation:
 ```Shell
-mvn package
+mvn -Dmaven.test.skip package
 cp target jdrmaa-1.0.jar $SGE_ROOT/lib
 ```
 

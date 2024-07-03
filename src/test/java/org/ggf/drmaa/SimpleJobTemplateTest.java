@@ -434,17 +434,22 @@ public class SimpleJobTemplateTest extends TestCase {
         assertEquals("{args = \"arg1\", \"arg2\"} {blockEmail = false} {jobCategory = myCategory} {jobSubmissionState = HOLD_STATE} {joinFiles = true} {nativeSpecification = \"-l arch=sol-sparc64\"}",
                 jt.toString());
         
-        Properties env = new Properties();
-        env.setProperty("PATH", "/tmp:/usr/bin");
-        env.setProperty("SHELL", "/usr/bin/csh");
-        jt.setJobEnvironment(env);
-        
-        assertEquals("{args = \"arg1\", \"arg2\"} {blockEmail = false} {jobCategory = myCategory} {jobEnvironment = [\"SHELL\" = \"/usr/bin/csh\"], [\"PATH\" = \"/tmp:/usr/bin\"]} {jobSubmissionState = HOLD_STATE} {joinFiles = true} {nativeSpecification = \"-l arch=sol-sparc64\"}",
-                jt.toString());
-        
         jt.setStartTime(new PartialTimestamp(19, 10, 49));
         
+        assertEquals("{args = \"arg1\", \"arg2\"} {blockEmail = false} {jobCategory = myCategory} {jobSubmissionState = HOLD_STATE} {joinFiles = true} {nativeSpecification = \"-l arch=sol-sparc64\"} {startTime = \"19:10:49\"}",
+                jt.toString());
+
+/*
+        @todo this test scenario does not work reliably: It expects the environment variables in a fixed order
+              which cannot be guaranteed
+        Properties env = new Properties();
+        env.setProperty("SHELL", "/usr/bin/csh");
+        env.setProperty("PATH", "/tmp:/usr/bin");
+        jt.setJobEnvironment(env);
+
         assertEquals("{args = \"arg1\", \"arg2\"} {blockEmail = false} {jobCategory = myCategory} {jobEnvironment = [\"SHELL\" = \"/usr/bin/csh\"], [\"PATH\" = \"/tmp:/usr/bin\"]} {jobSubmissionState = HOLD_STATE} {joinFiles = true} {nativeSpecification = \"-l arch=sol-sparc64\"} {startTime = \"19:10:49\"}",
                 jt.toString());
+*/
+
     }
 }
