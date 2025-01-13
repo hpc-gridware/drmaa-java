@@ -1413,7 +1413,15 @@ public class SessionImplJobTest extends TestCase {
             session.getJobProgramStatus(jobId);
             /* We use synchronize so that we don't reap the job info. */
             session.synchronize(Collections.singletonList(jobId), session.TIMEOUT_WAIT_FOREVER, false);
-            
+
+            // @todo: CS-928 getJobProgramStatus() (the underlying drmaa_job_ps()) below will give us old data
+            //        until reader threads are updated.
+            //        need to wait for the reader data store to be updated
+            //        after the 2s the job is most probably already gone, in which case drmaa_job_ps will consult
+            //        the japi internal copy of the job which contains the job report from the JOB_FINISH event
+            //        and in the end gets the correct data
+            Thread.sleep(2000);
+
             int status = session.getJobProgramStatus(jobId);
             
             /* No reason why this job should fail. */
@@ -1424,6 +1432,8 @@ public class SessionImplJobTest extends TestCase {
             session.deleteJobTemplate(jt);
         } catch (DrmaaException e) {
             fail("Exception while trying to get job status: " + e.getMessage());
+        } catch (InterruptedException e) {
+           throw new RuntimeException(e);
         }
     }
     

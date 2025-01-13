@@ -240,7 +240,7 @@ public class PartialTimestampTest extends TestCase {
         assertEquals(21, pt.get(pt.CENTURY));
         assertTrue(pt.isSet(pt.CENTURY));
         
-        /* Test out of range, non-resolveable values */
+        /* Test out of range, non-resolvable values */
         for (int field = pt.YEAR; field < pt.CENTURY; field++) {
             /* 1 is a valid value for every field except century. */
             pt.set(field, 9999);
