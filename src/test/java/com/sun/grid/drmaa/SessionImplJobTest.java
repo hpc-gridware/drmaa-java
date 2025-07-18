@@ -1485,7 +1485,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the job time to get scheduled. */
             try {
-                Thread.sleep(30000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
@@ -1499,7 +1499,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the job time to held. */
             try {
-                Thread.sleep(30000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
@@ -1511,7 +1511,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the job time to released. */
             try {
-                Thread.sleep(30000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
@@ -1523,7 +1523,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the job time to suspended. */
             try {
-                Thread.sleep(30000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
@@ -1535,7 +1535,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the job time to resumed. */
             try {
-                Thread.sleep(30000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
@@ -1547,7 +1547,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the job time to killed. */
             try {
-                Thread.sleep(60000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
@@ -1573,7 +1573,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the jobs time to get scheduled. */
             try {
-                Thread.sleep(30000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
@@ -1587,7 +1587,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the jobs time to held. */
             try {
-                Thread.sleep(30000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
@@ -1600,7 +1600,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the jobs time to released. */
             try {
-                Thread.sleep(30000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
@@ -1613,7 +1613,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the jobs time to suspended. */
             try {
-                Thread.sleep(30000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
@@ -1626,7 +1626,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the jobs time to resumed. */
             try {
-                Thread.sleep(30000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
@@ -1639,7 +1639,7 @@ public class SessionImplJobTest extends TestCase {
             
             /* Take a nap so that we give the jobs time to killed. */
             try {
-                Thread.sleep(60000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 fail("Sleep was interrupted");
             }
