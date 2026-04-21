@@ -2,7 +2,7 @@
 #___INFO__MARK_BEGIN_NEW__
 ###########################################################################
 #
-#  Copyright 2024 HPC-Gridware GmbH
+#  Copyright 2024,2026 HPC-Gridware GmbH
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -27,11 +27,12 @@
    <artifactId>jdrmaa</artifactId>
    <packaging>jar</packaging>
    <version>1.0</version>
-   <name>jdrmaa</name>
+   <name>Gridware Cluster Scheduler</name>
    <url>http://maven.apache.org</url>
    <properties>
       <maven.compiler.source>1.8</maven.compiler.source>
       <maven.compiler.target>1.8</maven.compiler.target>
+      <finalName>jdrmaa</finalName>
    </properties>
    <dependencies>
       <dependency>
@@ -41,4 +42,25 @@
          <scope>test</scope>
       </dependency>
    </dependencies>
+
+   <build>
+      <finalName>${finalName}</finalName>
+      <plugins>
+         <!-- generate bom.json and bom.xml -->
+         <plugin>
+            <groupId>org.cyclonedx</groupId>
+            <artifactId>cyclonedx-maven-plugin</artifactId>
+            <version>2.9.1</version>
+            <executions>
+               <execution>
+                  <phase>package</phase>
+                  <goals>
+                     <goal>makeAggregateBom</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+
+      </plugins>
+   </build>
 </project>
