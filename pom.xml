@@ -42,6 +42,7 @@
          <scope>test</scope>
       </dependency>
    </dependencies>
+<<<<<<< Updated upstream
 
    <build>
       <finalName>${finalName}</finalName>
@@ -62,5 +63,9 @@
          </plugin>
 
       </plugins>
+=======
+   <build>
+      <finalName>${project.artifactId}-${project.version}</finalName>
+>>>>>>> Stashed changes
    </build>
 </project>
