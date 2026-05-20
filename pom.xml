@@ -42,10 +42,9 @@
          <scope>test</scope>
       </dependency>
    </dependencies>
-<<<<<<< Updated upstream
 
    <build>
-      <finalName>${finalName}</finalName>
+      <finalName>${project.artifactId}-${project.version}</finalName>
       <plugins>
          <!-- generate bom.json and bom.xml -->
          <plugin>
@@ -63,9 +62,5 @@
          </plugin>
 
       </plugins>
-=======
-   <build>
-      <finalName>${project.artifactId}-${project.version}</finalName>
->>>>>>> Stashed changes
    </build>
 </project>
